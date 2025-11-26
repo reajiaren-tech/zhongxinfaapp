@@ -1,5 +1,9 @@
+
 import { GoogleGenAI } from "@google/genai";
 import { Character, IterationStep } from "../types";
+
+// Declare process to avoid TypeScript errors in Vite environments
+declare var process: any;
 
 const getSystemInstruction = (character: Character) => {
   switch (character) {

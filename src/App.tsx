@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
-import { LocationPoint, IterationStep, SimulationState, Character, CalculationDetails } from './types';
+import { LocationPoint, IterationStep, SimulationState, Character } from './types';
 import { initializeCenter, runIterationStep } from './services/mathUtils';
 import { fetchCharacterCommentary } from './services/geminiService';
 import { CharacterAvatar } from './components/CharacterAvatar';
@@ -7,7 +8,7 @@ import { Controls } from './components/Controls';
 import { Visualization } from './components/Visualization';
 import { BackgroundDecorations } from './components/Decorations';
 import { SlideLayout } from './components/SlideLayout';
-import { ChevronRight, ChevronLeft, Map, Database, TrendingUp, CheckCircle, Info, Calculator, X } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Map, Database, TrendingUp, Info, Calculator, X } from 'lucide-react';
 
 // Initial Data - 4 Demand Points (Markets)
 const INITIAL_POINTS: LocationPoint[] = [

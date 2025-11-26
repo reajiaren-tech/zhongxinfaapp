@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, ZAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
 import { LocationPoint, IterationStep } from '../types';
@@ -22,7 +23,7 @@ export const Visualization: React.FC<Props> = ({ points, history, currentIterati
   const currentCenter = history[currentIteration];
   const centerData = currentCenter ? [{ x: currentCenter.x, y: currentCenter.y, z: 1200, name: 'Center' }] : [];
   
-  const trailData = history.slice(0, currentIteration + 1).map((h, idx) => ({
+  const trailData = history.slice(0, currentIteration + 1).map((h) => ({
     x: h.x,
     y: h.y,
     z: 150,
@@ -100,7 +101,7 @@ export const Visualization: React.FC<Props> = ({ points, history, currentIterati
           
           {/* Facilities */}
           <Scatter name="Facilities" data={facilityData} animationDuration={800}>
-            {facilityData.map((entry, index) => (
+            {facilityData.map((_, index) => (
               <Cell 
                 key={`cell-${index}`} 
                 fill="#F97316" // Orange for all Demand Points
